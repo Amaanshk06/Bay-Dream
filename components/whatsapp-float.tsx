@@ -41,8 +41,6 @@ export function BookNowFloat() {
             px-12
             py-3
             shadow-xl
-            rounded-tl-xl
-            rounded-bl-xl
             transform
             rotate-90
             origin-right
@@ -65,7 +63,7 @@ export function BookNowFloat() {
             bottom-0
             left-0
             right-0
-            bg-white
+            bg-[#b48834]
             shadow-xl
             py-3
             z-50
@@ -76,11 +74,9 @@ export function BookNowFloat() {
           <button
             onClick={handleBookNow}
             className="
-              golden-gradient
               text-white
               px-8
-              py-3
-              rounded-full
+              py-1
               text-lg
               w-[90%]
               max-w-[500px]

@@ -78,7 +78,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section (Bay Dream Updated) */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-[120vh] md:h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-black">
           <Image
@@ -91,9 +91,10 @@ export default function HomePage() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto  pt-12 md:pt-0 ">
+
           <h1
-            className={`text-4xl md:text-5xl font-bold mb-6 font-playfair ${isVisible ? "slide-up" : "opacity-0"
+            className={`text-4xl md:text-5xl sm:mb-18 font-bold mb-6 font-playfair ${isVisible ? "slide-up" : "opacity-0"
               }`}
           >
             Find Your Perfect Stay With <span className="font-semibold">Bay Dream</span>
