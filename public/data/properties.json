@@ -1,0 +1,79 @@
+[
+  {
+    "slug": "breezona",
+    "name": "Breezona",
+    "type": "1 BHK",
+    "shortDescription": "Private 1BHK with plunge pool — clean, modern and perfect for couples.",
+    "longDescription": "Breezona blends relaxed coastal styling with modern convenience. The one-bedroom layout opens onto a private plunge pool and sun deck for quiet mornings and sunset dips. Inside you’ll find a comfy living area, a compact kitchenette with essentials, and fast Wi-Fi — everything you need for an easy, relaxing stay.",
+    "highlights": ["Private plunge pool", "Cozy 1 BHK layout", "Fast Wi-Fi", "Sun deck"],
+    "amenities": ["wifi", "ac", "kitchenette", "private_pool","parking"],
+    "maxGuests": 2,
+    "images": [
+      { "src": "/images/rooms1.jpg",
+        "alt": "Breezona private pool and sun deck at golden hour"
+     },
+      { "src": "/images/rooms2.jpg",
+        "alt": "Breezona bedroom with king bed"
+     },
+      { "src": "/images/rooms3.jpg",
+        "alt": "Breezona kitchenette and dining"
+     },
+      {
+        "src": "/images/breezona/pool_close.jpg",
+        "alt": "Breezona plunge pool detail"
+      }
+    ],
+    "location": {
+      "lat": null,
+      "lng": null,
+      "address": "Exact address to be provided",
+      "mapUrl": "https://maps.app.goo.gl/kMMNCofDqLZ7XFULA?g_st=ic"
+    },
+    "pricePerNight": null,
+    "policies": {
+      "checkIn": "15:00",
+      "checkOut": "11:00",
+      "cancellation": "Moderate"
+    },
+    "bookingUrl": ""
+  },
+  {
+    "slug": "casa-da-solares",
+    "name": "Casa Da Solares",
+    "type": "2 BHK",
+    "shortDescription": "Spacious 2BHK family home with private garden — ideal for families & groups.",
+    "longDescription": "Casa De Solares offers comfortable family living with two bedrooms, a full kitchen, and a private garden for outdoor dining. Managed locally by Bay Dream, this home is suited for longer stays and family trips, with secure parking, reliable Wi-Fi, and attentive host support when needed.",
+     "highlights": ["Two bedrooms","Full kitchen","Private garden","Family-friendly layout"],
+    "amenities": ["wifi","kitchen","garden","washing_machine","parking"],
+    "maxGuests": 4,
+    "images": [
+      { "src": "/images/hero-beach1.jpg",
+        "alt": "Casa De Solares front garden and outdoor dining area"
+     },
+      { "src": "/images/resort-overview1.jpg",
+        "alt": "Casa De Solares living room"
+     },
+      {
+        "src": "/images/casa-de-solares/kitchen.jpg",
+        "alt": "Casa De Solares full kitchen"
+      },
+      {
+        "src": "/images/casa-de-solares/bedroom1.jpg",
+        "alt": "Casa De Solares master bedroom"
+      }
+    ],
+    "location": {
+      "lat": null,
+      "lng": null,
+      "address": "Exact address to be provided",
+      "mapUrl": "https://maps.app.goo.gl/2G7NGT7W1u1Wje636?g_st=ic"
+    },
+    "pricePerNight": null,
+    "policies": {
+      "checkIn": "15:00",
+      "checkOut": "11:00",
+      "cancellation": "Moderate"
+    },
+    "bookingUrl": ""
+  }
+]
