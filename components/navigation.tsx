@@ -23,9 +23,9 @@ export function Navigation() {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
-    { href: "/rooms", label: "Rooms" },
-    { href: "/gallery", label: "Gallery" },
     { href: "/contact", label: "Contact Us" },
+    { href: "/rooms", label: "Privacy" },
+    { href: "/gallery", label: "Terms" },
   ]
 
   return (
@@ -35,9 +35,10 @@ export function Navigation() {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* === ROUNDED LOGO === */}
+        
+        {/* === LOGO === */}
         <Link href="/" className="flex items-center">
-          <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-full bg-white shadow-md overflow-hidden ">
+          <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-full bg-white shadow-md overflow-hidden">
             <Image
               src="/images/breezona-logo1.png"
               alt="Breezona Logo"
@@ -67,15 +68,19 @@ export function Navigation() {
           ))}
         </div>
 
-        {/* === BOOK NOW BUTTON === */}
-        <Button className="hidden md:block golden-gradient text-white px-6 py-2 rounded-full hover:opacity-90 transition-all duration-300 hover:scale-105">
-          BOOK NOW
-        </Button>
+        {/* === INVISIBLE SPACER TO KEEP NAV CENTERED === */}
+        <div className="hidden md:block w-24"></div>
 
         {/* === MOBILE MENU BUTTON === */}
-        <Button variant="ghost" size="sm" className="md:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="md:hidden"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
           {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </Button>
+
       </div>
 
       {/* === MOBILE MENU === */}
@@ -94,7 +99,6 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <Button className="w-full golden-gradient text-white py-2 rounded-full mt-4">BOOK NOW</Button>
           </div>
         </div>
       )}

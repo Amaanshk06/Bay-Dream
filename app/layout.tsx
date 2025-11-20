@@ -10,9 +10,9 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
 
 export const metadata: Metadata = {
-  title: "Bay Dream, by Anand Group of Compaines",
+  title: "Bay Dream-Curated holiday homes in Goa by Anand Group of Companies",
   description:
-    "Welcome to Casa Da Solares by Breezona — a serene 2BHK retreat with a private pool, just 15 minutes from Candolim Beach.",
+    "Two curated homes in Goa:Breezona (1BHK) and Casa Da Solares (2BHK). Book with Bay Dream.",
 }
 
 export default function RootLayout({

@@ -78,7 +78,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section (Bay Dream Updated) */}
-      <section className="relative h-[120vh] md:h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-[90vh] md:h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-black">
           <Image
@@ -94,10 +94,10 @@ export default function HomePage() {
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto  pt-12 md:pt-0 ">
 
           <h1
-            className={`text-4xl md:text-5xl sm:mb-18 font-bold mb-6 font-playfair ${isVisible ? "slide-up" : "opacity-0"
+            className={`text-5xl md:text-7xl sm:mb-18 font-bold mb-6 font-playfair ${isVisible ? "slide-up" : "opacity-0"
               }`}
           >
-            Find Your Perfect Stay With <span className="font-semibold">Bay Dream</span>
+            Bay Dream <span className="font-semibold text-3xl md:text-3xl">by Anand Group of Companies</span>
           </h1>
 
           <p
@@ -105,7 +105,7 @@ export default function HomePage() {
               }`}
             style={{ animationDelay: "0.2s" }}
           >
-            Explore beautiful Goan escapes — from the cozy 1BHK Breezona to the spacious 2BHK Casa Da Solares, each designed for comfort, privacy, and tropical calm.
+            Two homes, One unforgettable stay in Goa.
           </p>
 
           {/* Buttons */}
@@ -153,7 +153,7 @@ export default function HomePage() {
         </div>
       </section>
 
-
+      {/* Properties Preview */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
@@ -175,106 +175,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Welcome Section */}
-      <AnimatedSection animation="fadeInUp">
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <AnimatedSection animation="slideInLeft" delay={200}>
-                <div>
-                  <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-gray-800">
-                    Welcome to Bay Dream
-                  </h2>
-                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                    Tucked away just 15 minutes from Candolim Beach, Breezona is a beautifully designed 2BHK that blends boho charm with tropical serenity. With its soothing green tones, natural wood accents, and cozy minimal décor, this space invites you to unwind, breathe easy, and soak in Goa’s relaxed energy.
-                  </p>
-                  <Link href="/about">
-                    <Button
-                      variant="outline"
-                      className="border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-6 py-3 rounded-full bg-transparent"
-                    >
-                      Learn More About Us
-                    </Button>
-                  </Link>
-                </div>
-              </AnimatedSection>
-              <AnimatedSection animation="slideInRight" delay={400}>
-                <div>
-                  <Image
-                    src="/images/resort-overview1.jpg"
-                    alt="Resort Overview"
-                    width={800}
-                    height={600}
-                    className="rounded-lg shadow-xl hover-lift"
-                  />
-                </div>
-              </AnimatedSection>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
-
-      {/* Accommodations Preview */}
-      <AnimatedSection animation="fadeInUp">
-        <section className="py-20 golden-gradient">
-          <div className="container mx-auto px-4">
-            {/* ===== Section Header ===== */}
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-white">
-                Our Stay — The 2BHK Retreat
-              </h2>
-              <p className="text-xl text-white/90 max-w-3xl mx-auto">
-                Discover your calm tropical escape — a beautifully designed 2BHK with soothing interiors, a private pool, and peaceful vibes near Candolim Beach.
-              </p>
-            </div>
-
-            {/* ===== 1BHK Card with Image Slider ===== */}
-            <div className="max-w-4xl mx-auto">
-              <Card className="bg-white/95 backdrop-blur-sm hover:bg-white transition-all duration-300 hover:scale-105 hover-lift hover-glow">
-                <CardContent className="p-0">
-                  {/* Swiper Image Slider */}
-                  <Swiper
-                    modules={[Autoplay, Pagination]}
-                    autoplay={{ delay: 3000, disableOnInteraction: false }}
-                    pagination={{ clickable: true }}
-                    loop={true}
-                    className="w-full h-80 rounded-t-lg"
-                  >
-                    {[
-                      "/images/rooms1.jpg",
-                      "/images/rooms2.jpg",
-                      "/images/rooms3.jpg",
-                    ].map((src, index) => (
-                      <SwiperSlide key={index}>
-                        <Image
-                          src={src}
-                          alt={`Breezona 1BHK Room ${index + 1}`}
-                          width={800}
-                          height={500}
-                          className="w-full h-80 object-cover rounded-t-lg"
-                          priority={index === 0}
-                        />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* ===== Bottom Button ===== */}
-            <div className="text-center mt-12">
-              <Link href="/rooms">
-                <Button className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-3 rounded-full text-lg">
-                  View All Rooms
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
-
-      {/* Amenities Section */}
+      
+            {/* Amenities Section */}
       <AnimatedSection animation="fadeInUp">
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -320,6 +222,103 @@ export default function HomePage() {
           </div>
         </section>
       </AnimatedSection>
+      {/* Welcome Section */}
+      <AnimatedSection animation="fadeInUp">
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <AnimatedSection animation="slideInLeft" delay={200}>
+                <div>
+                  <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-gray-800">
+                    Welcome to Bay Dream
+                  </h2>
+                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                    Tucked away just 15 minutes from Candolim Beach, Breezona is a beautifully designed 2BHK that blends boho charm with tropical serenity. With its soothing green tones, natural wood accents, and cozy minimal décor, this space invites you to unwind, breathe easy, and soak in Goa’s relaxed energy.
+                  </p>
+                  <Link href="/about">
+                    <Button
+                      variant="outline"
+                      className="border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-6 py-3 rounded-full bg-transparent"
+                    >
+                      Learn More About Us
+                    </Button>
+                  </Link>
+                </div>
+              </AnimatedSection>
+              <AnimatedSection animation="slideInRight" delay={400}>
+                <div>
+                  <Image
+                    src="/images/resort-overview1.jpg"
+                    alt="Resort Overview"
+                    width={800}
+                    height={600}
+                    className="rounded-lg shadow-xl hover-lift"
+                  />
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Accommodations Preview */}
+      {/* <AnimatedSection animation="fadeInUp">
+        <section className="py-20 golden-gradient">
+          <div className="container mx-auto px-4">
+            {/* ===== Section Header ===== */}
+            {/* <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-white">
+                Our Stay — The 2BHK Retreat
+              </h2>
+              <p className="text-xl text-white/90 max-w-3xl mx-auto">
+                Discover your calm tropical escape — a beautifully designed 2BHK with soothing interiors, a private pool, and peaceful vibes near Candolim Beach.
+              </p>
+            </div>  */}
+
+            {/* ===== 1BHK Card with Image Slider ===== */}
+            {/* <div className="max-w-4xl mx-auto">
+              <Card className="bg-white/95 backdrop-blur-sm hover:bg-white transition-all duration-300 hover:scale-105 hover-lift hover-glow">
+                <CardContent className="p-0"> */}
+                  {/* Swiper Image Slider */}
+                  {/* <Swiper
+                    modules={[Autoplay, Pagination]}
+                    autoplay={{ delay: 3000, disableOnInteraction: false }}
+                    pagination={{ clickable: true }}
+                    loop={true}
+                    className="w-full h-80 rounded-t-lg"
+                  >
+                    {[
+                      "/images/rooms1.jpg",
+                      "/images/rooms2.jpg",
+                      "/images/rooms3.jpg",
+                    ].map((src, index) => (
+                      <SwiperSlide key={index}>
+                        <Image
+                          src={src}
+                          alt={`Breezona 1BHK Room ${index + 1}`}
+                          width={800}
+                          height={500}
+                          className="w-full h-80 object-cover rounded-t-lg"
+                          priority={index === 0}
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </CardContent>
+              </Card>
+            </div> */}
+
+            {/* ===== Bottom Button ===== */}
+            {/* <div className="text-center mt-12">
+              <Link href="/rooms">
+                <Button className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-3 rounded-full text-lg">
+                  View All Rooms
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection> */}
 
       {/* Testimonials Section */}
       <AnimatedSection animation="fadeInUp">
@@ -418,7 +417,7 @@ export default function HomePage() {
       </AnimatedSection>
 
       {/* Contact CTA */}
-      <AnimatedSection animation="fadeInUp">
+      {/* <AnimatedSection animation="fadeInUp">
         <section className="py-20 golden-gradient">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-white">
@@ -442,7 +441,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-      </AnimatedSection>
+      </AnimatedSection> */}
     </div>
   )
 }
