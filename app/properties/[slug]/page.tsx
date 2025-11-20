@@ -2,11 +2,6 @@
 
 import { useEffect, useState, use } from "react"
 import Image from "next/image"
-
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
-import { BookNowFloat } from "@/components/whatsapp-float"
-
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination, Autoplay } from "swiper/modules"
 import "swiper/css"
@@ -15,8 +10,35 @@ import "swiper/css/pagination"
 export default function PropertyPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
 
+  /*
+      ALL HOOKS MUST BE AT TOP (FIX FOR REACT)
+  */
   const [property, setProperty] = useState<any | null>(null)
 
+  // Load more state
+  const [visibleCount, setVisibleCount] = useState(6)
+  const loadMore = () => setVisibleCount(prev => prev + 6)
+
+  /*
+      AUTO GALLERY FILE LOADER
+  */
+  const extraGalleryImages: any[] = []
+  for (let i = 1; i <= 24; i++) {
+    extraGalleryImages.push({
+      src: `/properties/${slug}/gallery/${i}.jpg`,
+    })
+  }
+
+  const galleryImages = [
+    ...(property?.images || []),
+    ...extraGalleryImages,
+  ]
+
+  const visibleImages = galleryImages.slice(0, visibleCount)
+
+  /*
+      FETCH PROPERTY DATA
+  */
   useEffect(() => {
     fetch("/data/properties.json")
       .then((r) => r.json())
@@ -24,9 +46,11 @@ export default function PropertyPage({ params }: { params: Promise<{ slug: strin
         const found = all.find((p: any) => p.slug === slug)
         setProperty(found || null)
       })
-      .catch((e) => console.error("Failed to load property:", e))
   }, [slug])
 
+  /*
+      LOADING STATE
+  */
   if (!property) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -35,56 +59,43 @@ export default function PropertyPage({ params }: { params: Promise<{ slug: strin
     )
   }
 
-  /* =====================================================
-      AUTO GALLERY LOADER
-     ===================================================== */
-
-  // Auto-load gallery images located in:
-  // public/properties/<slug>/gallery/1.jpg ... 20.jpg  
-  const extraGalleryImages = []
-  for (let i = 1; i <= 20; i++) {
-    extraGalleryImages.push({
-      src: `/properties/${property.slug}/gallery/${i}.jpg`
-    })
-  }
-
-  // Merge JSON images + extra images
-  const galleryImages = [
-    ...(property.images || []),
-    ...extraGalleryImages,
-  ]
-
+  /*
+      PAGE START
+  */
 
   return (
     <>
-
       <main className="pt-0 pb-16">
 
-        {/* ======================================================
-            HERO SECTION WITH OVERLAY TEXT
-        ======================================================== */}
+        {/*=
+            HERO SECTION
+       === */}
         <div className="w-full relative">
           <Swiper
             modules={[Pagination, Autoplay]}
             spaceBetween={0}
             slidesPerView={1}
             loop={true}
-            autoplay={{ delay: 3000 }}
+            autoplay={{ delay: 5000 }}
             pagination={{ clickable: true }}
             className="relative"
           >
             {property.images?.map((img: any, i: number) => (
               <SwiperSlide key={i}>
-                <div className="relative w-full h-[500px] md:h-[700px]">
+                <div className="relative w-full h-[450px] md:h-[650px]">
                   <Image
                     src={img.src}
-                    alt={img.alt || property.name}
+                    alt={property.name}
                     fill
                     className="object-cover"
+                    priority={i === 0}
+                    sizes="100vw"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20"></div>
+                  {/* Hero Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/10"></div>
 
+                  {/* Hero Text */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
                     <h1 className="text-white text-4xl md:text-6xl font-playfair font-bold drop-shadow-xl">
                       {property.name}
@@ -104,9 +115,9 @@ export default function PropertyPage({ params }: { params: Promise<{ slug: strin
           </Swiper>
         </div>
 
-        {/* ======================================================
+        {/*=
             PAGE CONTENT
-        ======================================================== */}
+       === */}
         <div className="container mx-auto px-4 space-y-24 mt-20">
 
           {/* HIGHLIGHTS */}
@@ -129,7 +140,7 @@ export default function PropertyPage({ params }: { params: Promise<{ slug: strin
             </section>
           )}
 
-          {/* ABOUT THIS STAY */}
+          {/* ABOUT SECTION */}
           <section className="text-center max-w-3xl mx-auto">
             <h2 className="text-4xl font-playfair font-bold text-gray-900">
               About This Stay
@@ -149,8 +160,7 @@ export default function PropertyPage({ params }: { params: Promise<{ slug: strin
                 </h2>
 
                 <p className="text-gray-600 mt-4 leading-relaxed text-lg">
-                  Designed for comfort and tranquility — enjoy premium amenities
-                  tailored for a perfect Goan escape.
+                  Designed for comfort and tranquility — enjoy premium amenities.
                 </p>
               </div>
 
@@ -161,9 +171,7 @@ export default function PropertyPage({ params }: { params: Promise<{ slug: strin
                       <span className="text-white text-4xl">★</span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-gray-900">
-                      {item}
-                    </h3>
+                    <h3 className="text-lg font-bold text-gray-900">{item}</h3>
 
                     <p className="text-gray-600 text-sm mt-2 leading-relaxed max-w-xs">
                       Enjoy premium comfort & convenience.
@@ -174,26 +182,44 @@ export default function PropertyPage({ params }: { params: Promise<{ slug: strin
             </section>
           )}
 
-          {/* ======================================================
-              GALLERY (DYNAMICALLY LOADED)
-          ======================================================== */}
+          {/*=
+              GALLERY WITH LOAD MORE
+         === */}
           <section className="text-center">
             <h2 className="text-4xl font-playfair font-bold text-gray-900">
               Gallery
             </h2>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-10">
-              {galleryImages.map((img: any, i: number) => (
+              {visibleImages.map((img: any, i: number) => (
                 <div key={i} className="relative h-48 rounded-xl overflow-hidden shadow">
                   <Image
                     src={img.src}
                     alt=""
                     fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 50vw,
+                           (max-width: 1200px) 33vw,
+                           25vw"
+                    loading="lazy"
+                    placeholder="blur"
+                    blurDataURL="/blur-placeholder.jpg"
                   />
                 </div>
               ))}
             </div>
+
+            {/* LOAD MORE BUTTON */}
+            {visibleCount < galleryImages.length && (
+              <div className="mt-10">
+                <button
+                  onClick={loadMore}
+                  className="px-8 py-3 rounded-full golden-gradient text-white text-lg shadow-md hover:shadow-lg transition"
+                >
+                  Load More
+                </button>
+              </div>
+            )}
           </section>
 
           {/* LOCATION */}

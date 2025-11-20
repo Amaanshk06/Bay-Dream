@@ -40,8 +40,8 @@ export function Navigation() {
         <Link href="/" className="flex items-center">
           <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-full bg-white shadow-md overflow-hidden">
             <Image
-              src="/images/breezona-logo1.png"
-              alt="Breezona Logo"
+              src="/images/logo.png"
+              alt="Bay Dream Logo"
               fill
               className="object-cover"
               priority

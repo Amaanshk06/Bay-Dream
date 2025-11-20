@@ -8,10 +8,6 @@ import {
   MapPin,
   Phone,
   Mail,
-  Facebook,
-  Instagram,
-  Twitter,
-  Youtube,
   Award,
   Wifi,
   Car,
@@ -37,32 +33,16 @@ export function Footer() {
             <Link href="/" className="flex items-center mb-6">
               <div className="relative w-24 h-12">
                 <img
-                  src="/images/breezona-logo1.png"
-                  alt="Breezona Logo"
+                  src="/images/logo.png"
+                  alt="Bay Dream Logo"
                   className="object-contain w-full h-full"
                 />
               </div>
             </Link>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Welcome to Breezona — your calm tropical hideaway in Goa. 
-              A beautifully designed 1BHK retreat with a private pool, cozy interiors, 
-              and tranquil vibes just 15 minutes from Candolim Beach.
+              Welcome to Bay Dream by Anand Group of Compaines —
+              A beautifully designed 1BHK retreat with a private plunge pool,amd 2BHK family home with private garden.
             </p>
-
-            {/* <div className="flex space-x-4">
-              <Button size="sm" variant="ghost" className="text-gray-300 hover:text-white hover:bg-amber-600 p-2">
-                <Facebook className="w-5 h-5" />
-              </Button>
-              <Button size="sm" variant="ghost" className="text-gray-300 hover:text-white hover:bg-amber-600 p-2">
-                <Instagram className="w-5 h-5" />
-              </Button>
-              <Button size="sm" variant="ghost" className="text-gray-300 hover:text-white hover:bg-amber-600 p-2">
-                <Twitter className="w-5 h-5" />
-              </Button>
-              <Button size="sm" variant="ghost" className="text-gray-300 hover:text-white hover:bg-amber-600 p-2">
-                <Youtube className="w-5 h-5" />
-              </Button>
-            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -71,10 +51,10 @@ export function Footer() {
             <ul className="space-y-3">
               {[
                 { href: "/", label: "Home" },
-                { href: "/about", label: "About Breezona" },
-                { href: "/rooms", label: "Our Stay" },
-                { href: "/gallery", label: "Gallery" },
+                { href: "/about", label: "About Bay dream" },
                 { href: "/contact", label: "Contact Us" },
+                { href: "/rooms", label: "Privacy" },
+                { href: "/gallery", label: "Terms" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-gray-300 hover:text-amber-400 transition-colors duration-300">
@@ -118,19 +98,7 @@ export function Footer() {
 
             {/* Contact Information */}
             <div className="space-y-4 mb-6">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-amber-400 mt-1 flex-shrink-0" />
-                <div className="text-gray-300">
-                  <p>Flat no 102, Casa de Amora Apartment,Pilern, Goa 403114,India</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-amber-400 flex-shrink-0" />
-                <div className="text-gray-300">
-                  <p>+91 8830249088</p>
-                </div>
-              </div>
+             
 
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-amber-400 flex-shrink-0" />
@@ -144,7 +112,7 @@ export function Footer() {
             <div>
               <h4 className="font-semibold mb-3 text-white">Newsletter</h4>
               <p className="text-gray-300 text-sm mb-4">
-                Subscribe for exclusive offers, seasonal discounts, and Breezona updates.
+                Subscribe for exclusive offers, seasonal discounts, and Bay Dream updates.
               </p>
               <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
                 <Input
@@ -169,7 +137,6 @@ export function Footer() {
             <h4 className="text-lg font-semibold mb-4 text-white">Recognition</h4>
             <div className="flex flex-wrap justify-center items-center gap-8">
               {[
-                "Top-Rated Airbnb Stay - Goa 2024",
                 "Guest Favorite 2024",
                 "Tropical Luxury Recognition Award",
                 "Exceptional Cleanliness & Comfort",
@@ -188,8 +155,8 @@ export function Footer() {
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-gray-400 text-sm">© 2024 Breezona. All rights reserved.</div>
-            <div className="text-gray-400 text-sm">Designed & Developed by Amaan Shaikh</div>
+            <div className="text-gray-400 text-sm">© 2025 Bay Dream. All rights reserved.</div>
+            <div className="text-gray-400 text-sm">Designed & Developed by Cashless Karma</div>
           </div>
         </div>
       </div>
