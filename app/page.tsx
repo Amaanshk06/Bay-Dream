@@ -362,7 +362,7 @@ export default function HomePage() {
                   name: "Emily Carter",
                   location: "Bangalore",
                   property: "Breezona",
-                  rating: 5,
+                  rating: 4,
                   comment:
                     "Beautifully designed 1BHK — the tropical vibe was perfect! The kitchen and WiFi made our workation super smooth."
                 },
@@ -386,7 +386,7 @@ export default function HomePage() {
                   name: "Ananya Sharma",
                   location: "Mumbai",
                   property: "Breezona",
-                  rating: 5,
+                  rating: 4,
                   comment:
                     "The place is even better than the pictures! Peaceful, modern, and very well maintained. Definitely coming back!"
                 },
@@ -404,7 +404,7 @@ export default function HomePage() {
                   name: "Isabella Gomez",
                   location: "Chennai",
                   property: "Casa Da Solares",
-                  rating: 5,
+                  rating: 4,
                   comment:
                     "A very comfortable home with great amenities. Loved the peaceful surroundings and the quick support from Bay Dream’s team."
                 },
@@ -428,7 +428,7 @@ export default function HomePage() {
                   name: "Oliver Thomas",
                   location: "Kolkata",
                   property: "Casa Da Solares",
-                  rating: 5,
+                  rating: 4,
                   comment:
                     "Spacious and peaceful. Casa Da Solares is perfect for groups. We enjoyed cooking together in the well-equipped kitchen."
                 }
