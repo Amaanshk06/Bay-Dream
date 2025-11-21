@@ -47,10 +47,10 @@
     "amenities": ["wifi","kitchen","garden","washing_machine","parking"],
     "maxGuests": 4,
     "images": [
-      { "src": "/images/hero-beach1.jpg",
+      { "src": "/images/casa-de-solares/hero.jpg",
         "alt": "Casa De Solares front garden and outdoor dining area"
      },
-      { "src": "/images/resort-overview1.jpg",
+      { "src": "/images/casa-de-solares/living.jpg",
         "alt": "Casa De Solares living room"
      },
       {

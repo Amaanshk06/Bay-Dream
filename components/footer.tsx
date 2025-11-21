@@ -24,7 +24,8 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 text-white pb-24 md:pb-0">
+
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
@@ -41,7 +42,7 @@ export function Footer() {
             </Link>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Welcome to Bay Dream by Anand Group of Compaines —
-              A beautifully designed 1BHK retreat with a private plunge pool,amd 2BHK family home with private garden.
+              A beautifully designed 1BHK retreat with a private plunge pool,and 2BHK family home with private garden.
             </p>
           </div>
 
@@ -53,8 +54,8 @@ export function Footer() {
                 { href: "/", label: "Home" },
                 { href: "/about", label: "About Bay dream" },
                 { href: "/contact", label: "Contact Us" },
-                { href: "/rooms", label: "Privacy" },
-                { href: "/gallery", label: "Terms" },
+                { href: "/privacy", label: "Privacy" },
+                { href: "/terms", label: "Terms" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-gray-300 hover:text-amber-400 transition-colors duration-300">
@@ -98,7 +99,7 @@ export function Footer() {
 
             {/* Contact Information */}
             <div className="space-y-4 mb-6">
-             
+
 
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-amber-400 flex-shrink-0" />
@@ -156,7 +157,18 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-gray-400 text-sm">© 2025 Bay Dream. All rights reserved.</div>
-            <div className="text-gray-400 text-sm">Designed & Developed by Cashless Karma</div>
+            <div className="text-gray-400 text-sm">
+              Designed & Developed by{" "}
+              <a
+                href="https://cashlesskarma.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-amber-400 transition-colors"
+              >
+                Cashless Karma
+              </a>
+            </div>
+
           </div>
         </div>
       </div>

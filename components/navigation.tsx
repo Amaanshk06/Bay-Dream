@@ -22,10 +22,10 @@ export function Navigation() {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About Us" },
-    { href: "/contact", label: "Contact Us" },
-    { href: "/rooms", label: "Privacy" },
-    { href: "/gallery", label: "Terms" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
+    { href: "/privacy", label: "Privacy" },
+    { href: "/terms", label: "Terms" },
   ]
 
   return (

@@ -23,7 +23,7 @@ export default function PropertyPage({ params }: { params: Promise<{ slug: strin
       AUTO GALLERY FILE LOADER
   */
   const extraGalleryImages: any[] = []
-  for (let i = 1; i <= 24; i++) {
+  for (let i = 1; i <= 19; i++) {
     extraGalleryImages.push({
       src: `/properties/${slug}/gallery/${i}.jpg`,
     })
@@ -192,7 +192,7 @@ export default function PropertyPage({ params }: { params: Promise<{ slug: strin
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-10">
               {visibleImages.map((img: any, i: number) => (
-                <div key={i} className="relative h-48 rounded-xl overflow-hidden shadow">
+                <div key={i} className="relative h-[450px]  rounded-xl overflow-hidden shadow">
                   <Image
                     src={img.src}
                     alt=""

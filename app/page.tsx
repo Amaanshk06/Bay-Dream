@@ -77,7 +77,7 @@ export default function HomePage() {
   ]
   return (
     <div className="min-h-screen">
-      {/* Hero Section (Bay Dream Updated) */}
+      {/* Hero Section */}
       <section className="relative h-[90vh] md:h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-black">
@@ -115,19 +115,18 @@ export default function HomePage() {
             style={{ animationDelay: "0.4s" }}
           >
             {/* Explore */}
-            <Link href="/properties">
+            <Link href="/properties" className="w-full sm:w-auto">
               <Button
-                className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-3 rounded-full text-lg"
+                className="w-full sm:w-auto bg-white text-amber-600 hover:bg-gray-100 px-8 py-3 rounded-full text-lg"
               >
                 Explore Properties
               </Button>
             </Link>
 
-            {/* Book Now (Bay Dream logic) */}
+            {/* Book Now */}
             <Button
               onClick={() => {
                 try {
-                  // Fire Bay Dream analytics event
                   if (typeof window !== "undefined") {
                     if ((window as any).dataLayer) {
                       (window as any).dataLayer.push({
@@ -140,16 +139,16 @@ export default function HomePage() {
                   console.warn("Analytics error:", e)
                 }
 
-                // Booking fallback → /contact
                 if (typeof window !== "undefined") {
                   window.location.href = "/contact"
                 }
               }}
-              className="golden-gradient text-white px-8 py-3 rounded-full text-lg hover:opacity-90 hover:scale-105 transition-all duration-300"
+              className="w-full sm:w-auto golden-gradient text-white px-8 py-3 rounded-full text-lg hover:opacity-90 hover:scale-105 transition-all duration-300"
             >
               Book Now
             </Button>
           </div>
+
         </div>
       </section>
 
@@ -175,8 +174,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      
-            {/* Amenities Section */}
+
+      {/* Amenities Section */}
       <AnimatedSection animation="fadeInUp">
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -186,7 +185,7 @@ export default function HomePage() {
                 Amenities That Make You Feel at Home
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Designed for comfort and tranquility, Breezona blends tropical charm with modern convenience — everything you need for a perfect Goan escape.
+                Thoughtfully curated amenities across Breezona and Casa Da Solares — designed to bring comfort, relaxation, and a seamless stay with Bay Dream.
               </p>
             </div>
 
@@ -222,34 +221,36 @@ export default function HomePage() {
           </div>
         </section>
       </AnimatedSection>
+
       {/* Welcome Section */}
       <AnimatedSection animation="fadeInUp">
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <AnimatedSection animation="slideInLeft" delay={200}>
-                <div>
-                  <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-gray-800">
-                    Welcome to Bay Dream
-                  </h2>
-                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                    Tucked away just 15 minutes from Candolim Beach, Breezona is a beautifully designed 2BHK that blends boho charm with tropical serenity. With its soothing green tones, natural wood accents, and cozy minimal décor, this space invites you to unwind, breathe easy, and soak in Goa’s relaxed energy.
-                  </p>
-                  <Link href="/about">
-                    <Button
-                      variant="outline"
-                      className="border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-6 py-3 rounded-full bg-transparent"
-                    >
-                      Learn More About Us
-                    </Button>
-                  </Link>
-                </div>
-              </AnimatedSection>
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-gray-800">
+                  Welcome to Bay Dream
+                </h2>
+
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  Bay Dream brings you two thoughtfully crafted stays in Goa — Breezona, a cozy tropical 1BHK with a private pool, and Casa Da Solares, a spacious 2BHK family retreat with a peaceful private garden. Designed for comfort, style, and relaxation, each home offers a unique blend of modern amenities and Goan serenity.
+                </p>
+
+                <Link href="/about">
+                  <Button
+                    variant="outline"
+                    className="border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-6 py-3 rounded-full bg-transparent"
+                  >
+                    Learn More About Us
+                  </Button>
+                </Link>
+              </div>
+
               <AnimatedSection animation="slideInRight" delay={400}>
                 <div>
                   <Image
                     src="/images/resort-overview1.jpg"
-                    alt="Resort Overview"
+                    alt="Bay Dream Overview"
                     width={800}
                     height={600}
                     className="rounded-lg shadow-xl hover-lift"
@@ -259,6 +260,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
       </AnimatedSection>
 
       {/* Accommodations Preview */}
@@ -266,7 +268,7 @@ export default function HomePage() {
         <section className="py-20 golden-gradient">
           <div className="container mx-auto px-4">
             {/* ===== Section Header ===== */}
-            {/* <div className="text-center mb-16">
+      {/* <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-white">
                 Our Stay — The 2BHK Retreat
               </h2>
@@ -275,12 +277,12 @@ export default function HomePage() {
               </p>
             </div>  */}
 
-            {/* ===== 1BHK Card with Image Slider ===== */}
-            {/* <div className="max-w-4xl mx-auto">
+      {/* ===== 1BHK Card with Image Slider ===== */}
+      {/* <div className="max-w-4xl mx-auto">
               <Card className="bg-white/95 backdrop-blur-sm hover:bg-white transition-all duration-300 hover:scale-105 hover-lift hover-glow">
                 <CardContent className="p-0"> */}
-                  {/* Swiper Image Slider */}
-                  {/* <Swiper
+      {/* Swiper Image Slider */}
+      {/* <Swiper
                     modules={[Autoplay, Pagination]}
                     autoplay={{ delay: 3000, disableOnInteraction: false }}
                     pagination={{ clickable: true }}
@@ -308,8 +310,8 @@ export default function HomePage() {
               </Card>
             </div> */}
 
-            {/* ===== Bottom Button ===== */}
-            {/* <div className="text-center mt-12">
+      {/* ===== Bottom Button ===== */}
+      {/* <div className="text-center mt-12">
               <Link href="/rooms">
                 <Button className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-3 rounded-full text-lg">
                   View All Rooms
@@ -330,7 +332,7 @@ export default function HomePage() {
                 What Our Guests Say
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Hear from travelers who’ve experienced Breezona — your calm tropical hideaway in Goa.
+                Real experiences from guests who stayed at Breezona and Casa Da Solares — two beautiful homes by Bay Dream.
               </p>
             </div>
 
@@ -351,38 +353,85 @@ export default function HomePage() {
                 {
                   name: "Aarav Mehta",
                   location: "Pune",
+                  property: "Breezona",
                   rating: 5,
                   comment:
-                    "Our stay at Breezona was absolutely wonderful! The interiors are calm and cozy, and the private pool was the highlight of our trip.",
+                    "Our stay at Breezona was absolutely wonderful! The interiors are calm and cozy, and the private pool was the highlight of our trip."
                 },
                 {
                   name: "Emily Carter",
                   location: "Bangalore",
+                  property: "Breezona",
                   rating: 5,
                   comment:
-                    "Beautifully designed 1BHK — the vibe was so peaceful and tropical. The kitchen and WiFi made our workation perfect!",
+                    "Beautifully designed 1BHK — the tropical vibe was perfect! The kitchen and WiFi made our workation super smooth."
                 },
                 {
                   name: "Karan Singh",
                   location: "Delhi",
+                  property: "Breezona",
                   rating: 5,
                   comment:
-                    "The attention to detail at Breezona is amazing. Super clean, elegant interiors, and the pool area was just perfect for evening chill time.",
+                    "The attention to detail at Breezona is amazing. Clean interiors, peaceful surroundings, and the pool area was perfect for evening relaxation."
                 },
                 {
                   name: "Sofia Martinez",
                   location: "Hyderabad",
+                  property: "Breezona",
                   rating: 5,
                   comment:
-                    "Loved everything about Breezona — the decor, the location, and the comfort. Definitely one of the best stays we’ve had in Goa!",
+                    "Loved the decor, the private pool, and the quiet neighborhood. Breezona is truly a hidden gem in Goa!"
                 },
                 {
                   name: "Ananya Sharma",
                   location: "Mumbai",
+                  property: "Breezona",
                   rating: 5,
                   comment:
-                    "The place is as stunning as the pictures! Loved the balcony views and peaceful surroundings. We’ll surely be back!",
+                    "The place is even better than the pictures! Peaceful, modern, and very well maintained. Definitely coming back!"
                 },
+
+                /* CASA DA SOLARES REVIEWS */
+                {
+                  name: "Rahul Verma",
+                  location: "Ahmedabad",
+                  property: "Casa Da Solares",
+                  rating: 5,
+                  comment:
+                    "Casa Da Solares was perfect for our family trip. The 2BHK layout is spacious and the private garden was ideal for morning tea."
+                },
+                {
+                  name: "Isabella Gomez",
+                  location: "Chennai",
+                  property: "Casa Da Solares",
+                  rating: 5,
+                  comment:
+                    "A very comfortable home with great amenities. Loved the peaceful surroundings and the quick support from Bay Dream’s team."
+                },
+                {
+                  name: "Vikram Desai",
+                  location: "Surat",
+                  property: "Casa Da Solares",
+                  rating: 5,
+                  comment:
+                    "Perfect for longer stays! Full kitchen, high-speed Wi-Fi, and a beautiful garden. Our kids loved it."
+                },
+                {
+                  name: "Nisha Rao",
+                  location: "Mangalore",
+                  property: "Casa Da Solares",
+                  rating: 5,
+                  comment:
+                    "Lovely interiors, very homely, and extremely clean. The garden area made the space feel fresh and relaxing."
+                },
+                {
+                  name: "Oliver Thomas",
+                  location: "Kolkata",
+                  property: "Casa Da Solares",
+                  rating: 5,
+                  comment:
+                    "Spacious and peaceful. Casa Da Solares is perfect for groups. We enjoyed cooking together in the well-equipped kitchen."
+                }
               ].map((review, index) => (
                 <SwiperSlide key={index}>
                   <Card className="hover:shadow-lg transition-all duration-300 hover-lift h-full">

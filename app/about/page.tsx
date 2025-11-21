@@ -12,14 +12,14 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative h-[500px] mt-[-80px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-black">
-          <Image src="/images/about-hero1.jpg" alt="About Breezona" fill className="object-cover opacity-60" />
+          <Image src="/images/about-hero1.jpg" alt="About Bay Dream" fill className="object-cover opacity-60" />
         </div>
         <div className="relative z-10 text-center text-white px-4">
           <h1 className="text-5xl md:text-6xl font-bold mb-4 font-playfair slide-up">
-            About Breezona
+            About Bay Dream
           </h1>
           <p className="text-xl md:text-2xl font-light slide-up" style={{ animationDelay: "0.2s" }}>
-            Your Calm Tropical Hideaway Near Candolim
+            Two Homes. One Unforgettable Goan Experience.
           </p>
         </div>
       </section>
@@ -31,19 +31,23 @@ export default function AboutPage() {
             <div className="slide-in-left">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-gray-800">Our Story</h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Welcome to Breezona – your calm tropical hideaway in North Goa. Tucked away just 15 minutes from Candolim Beach, Breezona is a beautifully designed 1BHK that blends boho charm with tropical serenity.
+                Bay Dream brings together two thoughtfully crafted homes in North Goa — each designed to offer
+                comfort, warmth, privacy, and the true essence of tropical living.
               </p>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                With soothing green tones, natural wood accents, and cozy minimal décor, our space invites you to unwind, breathe easy, and soak in Goa’s relaxed energy. Whether you’re a couple, a solo traveler, or a digital nomad — Breezona offers the perfect mix of comfort and style.
+                Breezona is a cozy, tropical 1BHK with its own private pool — perfect for couples, solo travellers,
+                and digital nomads looking for a peaceful escape. Casa Da Solares is a spacious 2BHK family home
+                with a private garden, ideal for friends, groups, and longer stays.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Come, let Breezona be your slice of paradise in Goa — where tropical calm meets coastal charm.
+                With a focus on comfort, thoughtful design, and a warm hosting experience, Bay Dream creates stays
+                that feel like home — where every moment is slow, calm, and truly Goan.
               </p>
             </div>
             <div className="slide-in-right">
               <Image
                 src="/images/villa-pool1.jpg"
-                alt="Breezona Overview"
+                alt="Bay Dream Overview"
                 width={800}
                 height={600}
                 className="rounded-lg shadow-xl"
@@ -56,17 +60,17 @@ export default function AboutPage() {
       {/* The Space */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-gray-800">The Space</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-gray-800">Our Stays</h2>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-            Step into a bright living area with a cozy couch, soft lighting, and touches of greenery that make you feel instantly at home.
-            Sip your morning coffee on the balcony overlooking tall palms, or unwind with a glass of wine as the Goan breeze drifts in.
+            Whether you're seeking peaceful tropical charm or spacious family comfort, our two Bay Dream homes
+            offer the perfect Goan experience — thoughtfully designed and fully equipped for a memorable stay.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: Home, title: "Fully Equipped Kitchen", desc: "Includes refrigerator, microwave, cookware, hob & chimney." },
-              { icon: Heart, title: "Serene Bedroom", desc: "King-sized bed, premium linens, and cozy minimal décor." },
-              { icon: Waves, title: "Private Pool", desc: "Take a refreshing dip and enjoy tropical calm." },
+              { icon: Home, title: "Casa Da Solares (2BHK)", desc: "A spacious family-friendly home with a private garden and full kitchen." },
+              { icon: Heart, title: "Designed With Love", desc: "Warm interiors, cozy decor, and handcrafted details for a home-like feel." },
+              { icon: Waves, title: "Breezona (1BHK)", desc: "A tropical-themed hideaway with a private pool — perfect for couples & solo trips." },
             ].map((item, index) => (
               <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <CardContent className="p-6 text-center">
@@ -87,15 +91,15 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-white">Amenities & Access</h2>
           <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto">
-            Guests have access to everything needed for a relaxing stay — from comfort essentials to thoughtful touches.
+            Both our homes offer everything needed for a peaceful and comfortable stay — from modern essentials to thoughtful touches.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Wifi, title: "High-Speed WiFi", desc: "Stay connected effortlessly during your getaway." },
-              { icon: Car, title: "Free Parking", desc: "Dedicated parking space inside the gated complex." },
-              { icon: Waves, title: "Swimming Pool", desc: "Access to a serene shared pool for guests." },
-              { icon: Home, title: "Gym Access", desc: "Stay active during your stay with a modern fitness area." },
+              { icon: Wifi, title: "High-Speed WiFi", desc: "Stay connected effortlessly throughout your stay." },
+              { icon: Car, title: "Free Parking", desc: "Secure parking spaces provided at both properties." },
+              { icon: Waves, title: "Private / Shared Pools", desc: "Breezona has a private pool. Casa Da Solares guests enjoy peaceful outdoor spaces." },
+              { icon: Home, title: "Fully Equipped Spaces", desc: "Kitchens, essentials, and comfort-first amenities." },
             ].map((amenity, index) => (
               <Card
                 key={index}
@@ -119,13 +123,12 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-gray-800">Stay Guidelines</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Breezona is part of a gated community with a few more properties. Guests have access to the entire flat, the swimming pool, gym, and a dedicated parking space.  
+            Bay Dream properties offer a peaceful environment for all guests.  
             <br /><br />
-            This is a self-serviced apartment, with daily housekeeping provided between 10 AM and 6 PM. Towels and linens are replenished every 3 nights to conserve water.  
+            Breezona and Casa Da Solares both operate as self-serviced homes with daily housekeeping between 10 AM and 6 PM. Towels and linens are refreshed every 3 nights to support eco-friendly practices.
             <br /><br />
-            Kindly refrain from smoking indoors or playing loud music after 9 PM.  
-            Outside visitors are not allowed for your safety and privacy.  
-            A refundable security deposit of ₹5000 is collected at check-in.
+            Please avoid loud music after 9 PM, refrain from smoking indoors, and limit visitors for privacy and safety.  
+            A refundable security deposit may be required during check-in.
           </p>
         </div>
       </section>
@@ -134,21 +137,21 @@ export default function AboutPage() {
       <section className="py-20 golden-gradient">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-white">
-            Welcome to Your Goan Oasis
+            Stay with Bay Dream
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Experience peace, style, and comfort in the heart of Goa — stay at Breezona, your calm tropical getaway near Candolim.
+            Experience comfort, privacy, and tropical charm — choose from our two beautifully designed homes in North Goa.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-3 rounded-full text-lg">
               Book Your Stay
             </Button>
-            <Link href="/rooms">
+            <Link href="/properties">
               <Button
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-amber-600 px-8 py-3 rounded-full text-lg bg-transparent"
               >
-                View Our Space
+                View Our Properties
               </Button>
             </Link>
           </div>
